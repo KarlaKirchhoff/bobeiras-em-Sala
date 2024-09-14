@@ -1,0 +1,129 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@keyframes colorChanger {
+    10%{
+        border-color:brown;
+    }
+
+    30%{
+        border-color:blue;
+    }
+
+    50%{
+        border-color:violet;
+    }
+
+    75%{
+        border-color:yellow;
+    }
+    
+    100%{
+        border-color:teal;
+    }
+}
+@keyframes colorChangerbg {
+    10%{
+        box-shadow: 0 0 20px white, 0 0 20px white, 0 0 10px brown;
+        background-color:rgb(255, 152, 152);
+        border-color:rgb(255, 152, 152);
+    }
+
+    30%{
+        box-shadow: 0 0 20px white, 0 0 20px white, 0 0 10px blue;
+        background-color:rgb(155, 155, 255);
+        border-color:rgb(155, 155, 255);
+    }
+
+    50%{
+        box-shadow: 0 0 20px white, 0 0 20px white, 0 0 10px violet;
+        background-color:rgb(209, 143, 209);
+        border-color:rgb(209, 143, 209);
+    }
+
+    75%{
+        box-shadow: 0 0 20px white, 0 0 20px white, 0 0 10px yellow;
+        background-color:rgb(255, 255, 146);
+        border-color:rgb(255, 255, 146);
+    }
+    
+    100%{
+        box-shadow: 0 0 20px white, 0 0 20px white, 0 0 10px teal;
+        background-color:rgb(123, 255, 255);
+        border-color:rgb(123, 255, 255);
+    }
+}
+
+body{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center; 
+    background-color: black;
+    overflow: hidden;
+    background-image: url(shine.gif);
+}
+
+.circulo{
+    border-radius: 50%;
+    height: 600px;
+    width: 600px;
+    border: 10px double brown;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.808);
+    animation: colorChanger 5s infinite forwards;
+    transition: background-color 3s;
+    transition: border-color .5s;
+}
+.circulo:hover{
+    border-color: rgb(231, 231, 168);
+    box-shadow: 0 0 40px yellow;
+    animation: none;
+    cursor: pointer;
+
+}
+
+a{
+    display: flex;
+    color: aliceblue;
+    font-size: 50px;
+    transition: color .8s;
+}
+a:hover{
+    cursor: pointer;
+    color: rgb(252, 252, 86);
+}
+
+.divsimg{
+    display: flex;
+}
+
+.divimg{
+    background-image: url(fantasma.gif);
+    height: 100px;
+    width: 100px;
+    background-size: cover;
+    background-position: 50%;
+}
+
+.circ{
+    position: absolute;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+
+    animation: colorChangerbg 5s infinite forwards;
+}
+
+#circ1{
+    top: 100px;
+    right: 100px;
+}

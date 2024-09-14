@@ -1,0 +1,155 @@
+:root{
+    --alturaPersonagem: 52%;
+    --alturaDegrau: 48px;
+    --comecoEscada: 33.4%;
+    --larguraDegrau: 2%
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+@keyframes animarMario{
+    0%{
+        left: 0%;
+    }
+    /* subir escada */
+    27%{
+        top: var(--alturaPersonagem);
+        left: var(--comecoEscada);
+    }
+    29%{
+        top: calc(var(--alturaPersonagem) - var(--alturaDegrau));
+        left: var(--comecoEscada);
+    }
+    30%{
+        top: calc(var(--alturaPersonagem) - var(--alturaDegrau));
+        left: calc(var(--comecoEscada) + var(--larguraDegrau));
+    }
+    31%{
+        top: calc(var(--alturaPersonagem) - (var(--alturaDegrau)*2));
+        left: calc(var(--comecoEscada) + var(--larguraDegrau));
+    }
+    33%{
+        top: calc(var(--alturaPersonagem) - (var(--alturaDegrau)*2));
+        left: calc(var(--comecoEscada) + (var(--larguraDegrau)*2));
+    }
+    34%{
+        top: calc(var(--alturaPersonagem) - (var(--alturaDegrau)*3));
+        left: calc(var(--comecoEscada) + (var(--larguraDegrau)*2));  
+    }
+    35%{
+        top: calc(var(--alturaPersonagem) - (var(--alturaDegrau)*3));
+        left: calc(var(--comecoEscada) + (var(--larguraDegrau)*3));
+        
+    }
+    36%{
+        top: calc(var(--alturaPersonagem) - (var(--alturaDegrau)*4));
+        left: calc(var(--comecoEscada) + (var(--larguraDegrau)*3));
+    }
+    37%{
+        top: calc(var(--alturaPersonagem) - (var(--alturaDegrau)*4));
+        left: calc(var(--comecoEscada) + (var(--larguraDegrau)*4));
+    }
+    /* /subir escada */
+
+    43%{
+        top: calc(var(--alturaPersonagem) - (var(--alturaDegrau)*4));
+    }
+    45%{
+        top: var(--alturaPersonagem);
+    }
+
+    51.9%{
+        background-image: url(marioAndandoLadoDireito.gif);
+    }
+    52%{
+        left: 99%;
+        background-image: url(marioAndandoLadoEsquerdo.gif);
+    }
+    100%{
+        left: 0%;
+        background-image: url(marioAndandoLadoEsquerdo.gif);
+    }
+
+}
+
+body{
+    height: 100vh; width: 100vw;
+    background-image: url(shine.gif);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.arealink{
+    display: flex;
+}
+
+a.linkchellp{
+    font-size: 50px;
+    padding: 50px 70px;
+    letter-spacing: 10px;
+    background-color: black;
+    border: 10px double black;
+    color: aliceblue;
+    text-transform: uppercase;
+    transition: background-color .5s;
+}
+
+a.linkchellp:hover{
+    border-color: black;
+    background-color: white;
+    color: black;
+}
+
+a#linkchellp1{
+    position: fixed;
+    color: transparent;
+    background-color: transparent;
+    border: 10px double white;
+    z-index: 1;
+    left: 43.58%;
+}
+
+.areamario{
+    position: absolute;
+    height: 70px;
+    width: 50px;
+    top: var(--alturaPersonagem);
+    animation: animarMario 20s infinite linear;
+    background-image: url(marioAndandoLadoDireito.gif);
+    background-size: cover;
+    background-position: center;
+}
+
+.escada{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    width: 150px;
+    height: 180px;
+    z-index: 1;
+}
+
+.degrau{
+    background-color: aliceblue;
+    height: 25%;
+}
+
+#degrau1{
+    width: 25%;
+}
+#degrau2{
+    width: 50%;
+}
+#degrau3{
+    width: 75%;
+}
+#degrau4{
+    width: 100%;
+}
